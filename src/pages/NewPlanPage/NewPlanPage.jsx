@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { newPlan } from '../../utilities/practicePlan-service'
 
 
 export default function NewPlanPage() {
@@ -7,7 +8,11 @@ export default function NewPlanPage() {
     date: "",
     startTime: "",
     endTime: "",
+    confirm: '',
+    error: '',
   });
+
+  const [error, setError] = useState('');
 
   function handleChange(evt) {
     setPlan({...plan, [evt.target.name]: evt.target.value});
@@ -18,12 +23,15 @@ export default function NewPlanPage() {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try{
-      const plan = await planService.create(plan);
+      const formData = {...this.state};
+      delete formData.error;
+      delete formData.confirm;
+      const plan = await newPlan(formData);
+      this.props.setPlan(plan);
     } catch {
       setError('Unsuccessful')
     }
-    alert("sucess");
-}
+  }
    
   return (
     <div>
@@ -41,7 +49,7 @@ export default function NewPlanPage() {
             <button type="submit">Create Practice Plan</button>
           </form>
         </div>
-        {/* <p className="error-message">&nbsp;{this.state.error}</p> */}
+        <p className="error-message">&nbsp;{this.state.error}</p>
     </div>
   );
 }
