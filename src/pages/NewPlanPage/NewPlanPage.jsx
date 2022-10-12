@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { newPlan } from '../../utilities/practicePlan-service'
 
 
-export default function NewPlanPage() {
+export default function NewPlanPage({newPlan}) {
   const [plan, setPlan] = useState({
     name: "",
     date: "",
