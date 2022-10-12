@@ -1,6 +1,6 @@
 import {checkToken} from "../../utilities/users-service";
 
-export default function OrderHistoryPage() {
+export default function AllPracticePlans() {
     async function handleCheckToken() {
         // calling checkToken from service layer
         const expDate = await checkToken();
