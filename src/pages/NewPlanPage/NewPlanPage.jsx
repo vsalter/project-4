@@ -19,13 +19,13 @@ export default function NewPlanPage() {
         <div className="form-container">
           <form>
             <label>Practice Name</label>
-            <input type="text" name="name" value={plan.name} required />
+            <input type="text" name="name" value={plan.name} onChange={handleChange} required />
             <label>Practice Date</label>
-            <input type="date" name="date" value={plan.date} required />
+            <input type="date" name="date" value={plan.date} onChange={handleChange} required />
             <label>Start Time</label>
-            <input type="time" name="startTime" value={plan.startTime} required />
+            <input type="time" name="startTime" value={plan.startTime} onChange={handleChange} required />
             <label>End Time</label>
-            <input type="time" name="endTime" value={plan.endTime} required />
+            <input type="time" name="endTime" value={plan.endTime} onChange={handleChange} required />
             <button type="submit">Create Practice Plan</button>
           </form>
         </div>
