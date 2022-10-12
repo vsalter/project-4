@@ -8,6 +8,10 @@ export default function NewPlanPage() {
     startTime: "",
     endTime: "",
   });
+
+  function handleChange(evt) {
+    setPlan({...plan, [evt.target.name]: evt.target.value});
+  };
    
   return (
     <div>
