@@ -12,12 +12,18 @@ export default function NewPlanPage() {
   function handleChange(evt) {
     setPlan({...plan, [evt.target.name]: evt.target.value});
   };
+
+  async function handleSubmit(evt) {
+    // Prevent form from being submitted to the server
+    evt.preventDefault();
+    alert("sucess");
+}
    
   return (
     <div>
       <h1>Create New Practice Plan</h1>
         <div className="form-container">
-          <form>
+          <form onSubmit={handleSubmit}>
             <label>Practice Name</label>
             <input type="text" name="name" value={plan.name} onChange={handleChange} required />
             <label>Practice Date</label>
