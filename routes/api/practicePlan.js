@@ -5,4 +5,6 @@ const practicePlanCtrl = require('../../controllers/api/practicePlan');
 // POST /api/users
 router.post('/', practicePlanCtrl.create);
 
+router.get('/', practicePlanCtrl.show);
+
 module.exports = router;

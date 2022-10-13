@@ -6,3 +6,7 @@ const BASE_URL = '/api/practicePlan';
 export async function newPlan(planData) {
   return sendRequest(BASE_URL, 'POST', planData);
 } 
+
+export function showPlans() {
+  return sendRequest(BASE_URL);
+}

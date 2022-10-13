@@ -12,12 +12,16 @@ const practicePlanSchema = new Schema({
         required: true
     },
     startTime: {
-        type: Date,
-        required: true
+        type: Date, 
+        default: function(){
+            return new Date(new Date().setFullYear(new Date().getFullYear()+1))
+        }
     },
     endTime: {
-        type: Date,
-        required: true
+        type: Date, 
+        default: function(){
+            return new Date(new Date().setFullYear(new Date().getFullYear()+1))
+        }
     },
     user: { 
         type: Schema.Types.ObjectId, 

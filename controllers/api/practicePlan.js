@@ -4,17 +4,26 @@ async function create(req, res) {
 // Baby step...
     console.log(req.body)
     console.log(req)
-    res.json({
-        practicePlan: {
-        name: req.body.name,
-        date: req.body.date,
-        startTime: req.body.startTime,
-        endTime: req.body.endTime,
-        }
-    });
+    req.body.user = req.user._id;
+    console.log('req.body', req.body);
+    const newPlan = new Plan(req.body);
+    await newPlan.save();
+    res.json(newPlan)
+    // res.json({
+    //     practicePlan: {
+    //     name: req.body.name,
+    //     date: req.body.date,
+    //     startTime: req.body.startTime,
+    //     endTime: req.body.endTime,
+    //     }
+    // });
 }
 
-// Add the item to the cart
+async function show(req, res) {
+    const getPlans = await Plan.find({});
+    res.json(getPlans);
+}
+
 async function addToPlans(req, res) {
     const plan = await Plan.create(req.body);
     res.json(plan);
@@ -22,5 +31,6 @@ async function addToPlans(req, res) {
   
 module.exports = {
     create,
-    addToPlans
+    addToPlans,
+    show
 };

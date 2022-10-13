@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import * as planService from '../../utilities/practicePlan-service';
+import * as planAPI from '../../utilities/practicePlan-api';
 
 
 export default function NewPlanPage({newPlan}) {
@@ -8,8 +9,6 @@ export default function NewPlanPage({newPlan}) {
     date: "",
     startTime: "",
     endTime: "",
-    confirm: '',
-    error: '',
   });
 
   const [error, setError] = useState('');
@@ -23,7 +22,7 @@ export default function NewPlanPage({newPlan}) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try{
-      const practicePlan = await planService.newPlan(plan);
+      const practicePlan = await planAPI.newPlan(plan);
       setPlan(practicePlan);
       alert('success');
     } catch {
@@ -41,12 +40,13 @@ export default function NewPlanPage({newPlan}) {
             <label>Practice Date</label>
             <input type="date" name="date" value={plan.date} onChange={handleChange} required />
             <label>Start Time</label>
-            <input type="time" name="startTime" value={plan.startTime} onChange={handleChange} required />
+            <input type="datetime-local" name="startTime" value={plan.startTime} onChange={handleChange} required />
             <label>End Time</label>
-            <input type="time" name="endTime" value={plan.endTime} onChange={handleChange} required />
+            <input type="datetime-local" name="endTime" value={plan.endTime} onChange={handleChange} required />
             <button type="submit">Create Practice Plan</button>
           </form>
         </div>
+        <p>{plan.name}</p>
         <p className="error-message">&nbsp;{error}</p>
     </div>
   );
