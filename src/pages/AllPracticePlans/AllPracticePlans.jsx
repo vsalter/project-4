@@ -1,6 +1,8 @@
 import {checkToken} from "../../utilities/users-service";
+import * as planService from '../../utilities/practicePlan-service';
 
-export default function AllPracticePlans() {
+
+export default function AllPracticePlans(plan) {
     async function handleCheckToken() {
         // calling checkToken from service layer
         const expDate = await checkToken();
@@ -10,7 +12,8 @@ export default function AllPracticePlans() {
     return (
         <>
             <h1>Your Practice Plans</h1>
-            {/* <button onClick={handleCheckToken}>Check When My Login Expires</button> */}
+            <span>{plan.name}</span>
+            <h4>name: {plan.name}</h4>
         </>
     );
 }
