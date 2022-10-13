@@ -7,16 +7,24 @@ const practicePlanSchema = new Schema({
         type: String,
         required: true
     },
+    date: {
+        type: Date,
+        required: true
+    },
     startTime: {
         type: Date,
         required: true
     },
     endTime: {
-        type: Time,
+        type: Date,
         required: true
-    }
+    },
+    user: { 
+        type: Schema.Types.ObjectId, 
+        ref: 'User', 
+        required: true }
 }, {
-    timestamps: true,
+    timestamps: true, 
 });
 
 
