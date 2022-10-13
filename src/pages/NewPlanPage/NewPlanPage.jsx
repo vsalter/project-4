@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { newPlan } from '../../utilities/practicePlan-service'
+import * as planService from '../../utilities/practicePlan-service';
 
 
 export default function NewPlanPage({newPlan}) {
@@ -23,11 +23,9 @@ export default function NewPlanPage({newPlan}) {
     // Prevent form from being submitted to the server
     evt.preventDefault();
     try{
-      const formData = {...this.state};
-      delete formData.error;
-      delete formData.confirm;
-      const plan = await newPlan(formData);
-      this.props.setPlan(plan);
+      const practicePlan = await planService.newPlan(plan);
+      setPlan(practicePlan);
+      alert('success');
     } catch {
       setError('Unsuccessful')
     }
@@ -49,7 +47,7 @@ export default function NewPlanPage({newPlan}) {
             <button type="submit">Create Practice Plan</button>
           </form>
         </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
+        <p className="error-message">&nbsp;{error}</p>
     </div>
   );
 }
