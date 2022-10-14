@@ -27,10 +27,28 @@ async function show(req, res) {
 async function addToPlans(req, res) {
     const plan = await Plan.create(req.body);
     res.json(plan);
-  }
+}
+
+async function getPlan(req, res) {
+    const plan = await Plan.findById(req.params.id);
+    res.json(plan);
+}
+
+async function editPlan(req, res) {
+    const plan = await Plan.findByIdAndUpdate({_id: req.params.id}, req.body, {new:true});
+    res.json(plan);
+}
+
+async function deletePlan(req, res) {
+    const plan = await Plan.findByIdAndDelete({_id: req.params.id, user: req.user._id});
+    res.json('DELETED');
+}
   
 module.exports = {
     create,
     addToPlans,
-    show
+    show,
+    deletePlan,
+    editPlan,
+    getPlan
 };

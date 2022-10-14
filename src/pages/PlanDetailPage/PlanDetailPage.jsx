@@ -1,8 +1,9 @@
 import {checkToken} from "../../utilities/users-service";
-import * as planService from '../../utilities/practicePlan-service';
+import { useState, useEffect } from "react";
+import * as practicePlanAPI from "../../utilities/practicePlan-api";
 
 
-export default function AllPracticePlans(plan) {
+export default function PlanDetailPage(plan) {
     async function handleCheckToken() {
         // calling checkToken from service layer
         const expDate = await checkToken();

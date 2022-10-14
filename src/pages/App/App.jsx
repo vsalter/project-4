@@ -3,11 +3,11 @@ import {useState} from 'react';
 // Import the following components
 import AuthPage from '../AuthPage/AuthPage';
 import NewPlanPage from '../../components/NewPlanPage/NewPlanPage';
-import AllPracticePlans from '../AllPracticePlans/AllPracticePlans';
 import {Routes, Route} from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import {getUser} from '../../utilities/users-service';
 import PlanViews from '../PlanViews/PlanViews';
+import PlanDetailPage from '../PlanDetailPage/PlanDetailPage';
 
 function App() {
     // set the user by calling getUser function
@@ -21,7 +21,7 @@ function App() {
                     <Routes>
                         <Route path="/plans/new" element={<NewPlanPage/>}/>
                         <Route path="/plans" element={<PlanViews/>}/>
-                        <Route path="/details/:id" element={<AllPracticePlans/>}/>
+                        <Route path="/details/:id" element={<PlanDetailPage/>}/>
                     </Routes>
                 </>
                 :
