@@ -11,6 +11,10 @@ export function showPlans() {
   return sendRequest(BASE_URL);
 }
 
+export function getPlan(id) {
+  return sendRequest(`${BASE_URL}/${id}`);
+}
+
 export function updatePlan(id, updatedData) {
   return sendRequest(`${BASE_URL}/${id}`, 'PUT', updatedData);
 }

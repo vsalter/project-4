@@ -12,6 +12,7 @@ import PlanDetailPage from '../PlanDetailPage/PlanDetailPage';
 function App() {
     // set the user by calling getUser function
     const [user, setUser] = useState(getUser());
+    
 
     return (
         < main className="App">
@@ -21,7 +22,7 @@ function App() {
                     <Routes>
                         <Route path="/plans/new" element={<NewPlanPage/>}/>
                         <Route path="/plans" element={<PlanViews/>}/>
-                        <Route path="/details/:id" element={<PlanDetailPage/>}/>
+                        <Route path="/plans/details/:id" element={<PlanDetailPage/>}/>
                     </Routes>
                 </>
                 :

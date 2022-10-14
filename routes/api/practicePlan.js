@@ -8,6 +8,8 @@ router.post('/', ensureLoggedIn, practicePlanCtrl.create);
 
 router.get('/', ensureLoggedIn, practicePlanCtrl.show);
 
+router.get('/:id', ensureLoggedIn, practicePlanCtrl.getPlan);
+
 router.put('/:id', ensureLoggedIn, practicePlanCtrl.editPlan);
 
 router.delete('/:id', ensureLoggedIn, practicePlanCtrl.deletePlan);

@@ -1,20 +1,29 @@
-import {checkToken} from "../../utilities/users-service";
 import { useState, useEffect } from "react";
 import * as practicePlanAPI from "../../utilities/practicePlan-api";
+import { useParams } from "react-router-dom";
 
 
-export default function PlanDetailPage(plan) {
-    async function handleCheckToken() {
-        // calling checkToken from service layer
-        const expDate = await checkToken();
-        console.log(`expDate is ${expDate}`);
-    }
-
+export default function PlanDetailPage() {
+    let { id } = useParams();
+    console.log(id);
+    const [plans, setPlans] = useState([]);
+    const [p1, setP1] = useState([]);
+    useEffect(() => {
+        async function getPlans() {
+            const plans = await practicePlanAPI.showPlans();
+            setPlans(plans);
+            const p2 = plans.filter(p => p._id === id);
+            setP1(p2);
+        }
+        getPlans();
+    }, [])
+    console.log(p1);
+    // console.log(plans);
     return (
         <>
-            <h1>Your Practice Plans</h1>
-            <span>{plan.name}</span>
-            <h4>name: {plan.name}</h4>
-        </>
-    );
+        Plan 
+       {p1[0].name}
+        
+    
+    </>)
 }
