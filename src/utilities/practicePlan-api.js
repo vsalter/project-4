@@ -10,3 +10,11 @@ export async function newPlan(planData) {
 export function showPlans() {
   return sendRequest(BASE_URL);
 }
+
+export function updatePlan(id, updatedData) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PUT', updatedData);
+}
+
+export function deletePlan(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
+}
