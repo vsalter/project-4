@@ -8,8 +8,8 @@ router.post('/', ensureLoggedIn, practicePlanCtrl.create);
 
 router.get('/', ensureLoggedIn, practicePlanCtrl.show);
 
-router.get('/:id', ensureLoggedIn, practicePlanCtrl.editPlan);
+router.put('/:id', ensureLoggedIn, practicePlanCtrl.editPlan);
 
-router.get('/:id', ensureLoggedIn, practicePlanCtrl.deletePlan);
+router.delete('/:id', ensureLoggedIn, practicePlanCtrl.deletePlan);
 
 module.exports = router;
