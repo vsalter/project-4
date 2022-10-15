@@ -21,8 +21,11 @@ export default function PlanDetailPage() {
     // console.log(plans);
     return (
         <>
-        Plan 
-       {p1[0].name}
+            <h1>{p1[0].name}</h1> 
+            
+            <h3>Date: {p1[0].date}</h3>
+            <h3>Start Time: {p1[0].startTime}</h3>
+            <h3>End Time: {p1[0].endTime}</h3>
         
     
     </>)
