@@ -46,7 +46,6 @@ export default function NewPlanPage({newPlan}) {
             <button type="submit">Create Practice Plan</button>
           </form>
         </div>
-        <p>{plan.name}</p>
         <p className="error-message">&nbsp;{error}</p>
     </div>
   );
