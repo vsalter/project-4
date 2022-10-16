@@ -23,7 +23,8 @@ function App() {
                     <NavBar user={user} setUser={setUser}/>
                     <Routes>
                         <Route path="/plans/new" element={<NewPlanPage/>}/>
-                        <Route path="/plans" element={<PlanViews/>}/>
+                        <Route path="/plans" element={<PlanViews user={user}/>}/>
+
                         <Route path="/plans/details/:id" element={<PlanDetailPage/>}/>
                         {/* <Route path="/plans/edit/:id" element={<EditPlan/>}/> */}
                     </Routes>

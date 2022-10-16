@@ -23,6 +23,10 @@ const practicePlanSchema = new Schema({
             return new Date(new Date().setFullYear(new Date().getFullYear()+1))
         }
     },
+    complete: {
+        type: Boolean,
+        default: false,
+    },
     user: { 
         type: Schema.Types.ObjectId, 
         ref: 'User', 

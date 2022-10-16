@@ -22,3 +22,7 @@ export function updatePlan(id, updatedData) {
 export function deletePlan(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'DELETE');
 }
+
+export function completePractice(id, newStatus) {
+  return sendRequest(`${BASE_URL}/${id}`, 'PATCH', newStatus);
+}
