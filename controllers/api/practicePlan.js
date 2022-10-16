@@ -43,6 +43,23 @@ async function deletePlan(req, res) {
     const plan = await Plan.findByIdAndDelete({_id: req.params.id, user: req.user._id});
     res.json('DELETED');
 }
+
+async function completePractice(req, res){
+    // const checkedGifts = await Recipient.findByIdAndUpdate(id);
+    //how to find the recipient in the form (pass the user id)
+    //this has the id- the entire recipient
+    const checkOffPractice = await Plan.findById(req.params.id);
+    checkOffPractice.complete = req.complete
+    await checkOffPractice.save()
+    console.log( `checkOffPractice.complete: ${checkOffPractice.complete}`)
+
+    console.log( `checkOffPractice: ${req.complete}`)
+    console.log(`req.id: ${req.params.id}`)
+    //assign checkedGifts is true
+    // req..body.___ is true
+
+    res.json(checkOffPractice)
+}
   
 module.exports = {
     create,
@@ -50,5 +67,6 @@ module.exports = {
     show,
     deletePlan,
     editPlan,
-    getPlan
+    getPlan,
+    completePractice
 };
