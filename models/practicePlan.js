@@ -20,7 +20,7 @@ const practicePlanSchema = new Schema({
     endTime: {
         type: Date, 
         default: function(){
-            return new Date(new Date())
+            return new Date(new Date(YYYY-mm-dd))
         }
     },
     // complete: {

@@ -9,14 +9,7 @@ async function create(req, res) {
     const newPlan = new Plan(req.body);
     await newPlan.save();
     res.json(newPlan)
-    // res.json({
-    //     practicePlan: {
-    //     name: req.body.name,
-    //     date: req.body.date,
-    //     startTime: req.body.startTime,
-    //     endTime: req.body.endTime,
-    //     }
-    // });
+    
 }
 
 async function show(req, res) {
