@@ -44,11 +44,13 @@ Coaches Corner is an app for coaches to create practice plans for their respecti
 - On the user dashboard, on the list of plans, there is a link to view the details for each practice
 
 **Deatil View**
-![Screen Shot 2022-10-17 at 3 24 48 PM](https://user-images.githubusercontent.com/59453943/196265411-6e8197f2-b679-43c3-b2a8-8c7ec8c686b0.png)
+![Screen Shot 2022-10-17 at 3 28 09 PM](https://user-images.githubusercontent.com/59453943/196265633-fa71b854-77d6-4ad7-af51-bfd3ddfd9645.png)
+
 
 ## Approach Taken
-- **Wireframe:** Link to wireframe is [here](https://whimsical.com/connect-four-2hawUxoduy7KME5LiFP8C2)
-- **Pseudocode:** Link to pseudocode is [here](https://docs.google.com/document/d/1gpZOTKWqRWZA9izZgI-v74ohHJ-872QfOxfI2-Hnmhs/edit?usp=sharing)
+- **Wireframe:** Link to wireframe is [here](https://whimsical.com/mvp-Snu1hfXXgaYKVCSFQLw8Yv)
+- **ERD:** Link to pseudocode is [here](https://lucid.app/lucidchart/d798f8ef-d47a-4e8a-a7fb-8414345cadb0/edit?viewport_loc=-516%2C-317%2C2219%2C1136%2C0_0&invitationId=inv_8c4c7bd4-abda-4dfa-b23d-0b84e595cd22)
+- **Trello:** Link to pseudocode is [here](https://trello.com/invite/b/DngNlN1U/65244faea4d2d186812bf818b367225c/coachescorner)
 
 ## Hurdles
  - The first hurdle I faced was updating the board. For the logic to make moves on the board I started by implementing the logic used from my Tic-Tac-Toe game. This would not work for Connect Four because it updated the individual circles instead of the column. I contemplated on multiple solutions and settled on implementing a data structure we learned in class, a stack. I created an array of arrays called **col**, to represent the 7 columns on the board. I used a conditional statement to add elements to the array. This allowed me to update the columns from bottom to top.
