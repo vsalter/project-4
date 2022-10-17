@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import * as planService from '../../utilities/practicePlan-service';
 import * as planAPI from '../../utilities/practicePlan-api';
 
 

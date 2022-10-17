@@ -11,12 +11,14 @@ export default function NavBar({user, setUser}) {
 
     return (
         <nav>
-            <Link to="/">View All Practice Plans</Link>
+            <div>
+            <Link className='links' to="/">View All Practice Plans</Link>
             &nbsp; | &nbsp;
-            <Link to="/new">New Plan</Link>
+            <Link className='links' to="/new">New Plan</Link>
             &nbsp; | &nbsp;
+            </div>
             <span>Welcome, {user.name}</span>
-            &nbsp;&nbsp; <Link to={""} onClick={handleLogOut}>Logout</Link>
+            &nbsp;&nbsp; <Link className='links' to={""} onClick={handleLogOut}>Logout</Link>
         </nav>
     )
 }
