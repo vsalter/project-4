@@ -1,3 +1,4 @@
+import './PlanViews.css'
 import { useState, useEffect } from "react";
 import * as practicePlanAPI from "../../utilities/practicePlan-api";
 import {Link} from 'react-router-dom';
@@ -24,12 +25,15 @@ export default function PlanViews({user}) {
     }
 
     return (
-        <>
+    <>
+    <h1>All of {user.name}'s Practice Plans </h1>
+    <div className='plans'>
         { plans.map((p, idx) => 
-        <div>
-            <p>{p.name} | {p.date} | {p.startTime} | <Link to={`details/${p._id}`}><button onClick={() => getAPlan(p._id)}>details </button></Link> | <button onClick={()=>handleDelete(p._id)}>x</button></p> 
+        <div className="cards">
+            <p>{p.name} | {p.date} | {p.startTime} | <Link to={`details/${p._id}`}><button className='buttons' onClick={() => getAPlan(p._id)}>details </button></Link> | <button className='buttons' onClick={()=>handleDelete(p._id)}>x</button></p> 
         </div>
         
     )}
+    </div>
     </>)
 }

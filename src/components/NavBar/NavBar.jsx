@@ -15,7 +15,6 @@ export default function NavBar({user, setUser}) {
             <Link className='links' to="/">View All Practice Plans</Link>
             &nbsp; | &nbsp;
             <Link className='links' to="/new">New Plan</Link>
-            &nbsp; | &nbsp;
             </div>
             <span>Welcome, {user.name}</span>
             &nbsp;&nbsp; <Link className='links' to={""} onClick={handleLogOut}>Logout</Link>

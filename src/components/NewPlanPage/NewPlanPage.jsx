@@ -1,3 +1,4 @@
+import './NewPlanPage.css'
 import React, { useState } from 'react';
 import * as planAPI from '../../utilities/practicePlan-api';
 
@@ -43,7 +44,7 @@ export default function NewPlanPage({newPlan}) {
             <input type="datetime-local" name="startTime" value={plan.startTime} onChange={handleChange} required />
             <label>End Time</label>
             <input type="datetime-local" name="endTime" value={plan.endTime} onChange={handleChange} required />
-            <button type="submit">Create Practice Plan</button>
+            <button className='button' type="submit">Create Practice Plan</button>
           </form>
         </div>
         <p className="error-message">&nbsp;{error}</p>

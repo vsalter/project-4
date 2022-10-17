@@ -7,9 +7,13 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-family: anaphora-stencil, sans-serif;
+    font-weight: 800;
+    font-style: normal;
 }
 
 .links {
     text-decoration: none;
     color: black;
 }
+
