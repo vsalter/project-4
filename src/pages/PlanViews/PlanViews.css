@@ -1,0 +1,25 @@
+.plans {
+    min-width: 100%;
+    background-color: white;
+    text-align: center;
+}
+.cards {
+    grid-area: card;
+    width: 80%;
+    margin-left: 10%;
+    background-color: lightgray;
+    border: 5px solid thick;
+    border-color: black;
+}
+
+.buttons {
+    background-color: black;
+    color: white;
+    padding: 4px;
+}
+
+h1 {
+    font-family: sporty-pro, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
