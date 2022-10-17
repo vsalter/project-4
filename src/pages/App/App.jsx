@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react';
+import {useState, useEffect } from 'react';
 // Import the following components
 import AuthPage from '../AuthPage/AuthPage';
 import NewPlanPage from '../../components/NewPlanPage/NewPlanPage';
@@ -8,12 +8,21 @@ import NavBar from '../../components/NavBar/NavBar';
 import {getUser} from '../../utilities/users-service';
 import PlanViews from '../PlanViews/PlanViews';
 import PlanDetailPage from '../PlanDetailPage/PlanDetailPage';
+import * as practicePlanAPI from '../../utilities/practicePlan-api';
 import EditPlan from '../EditPlan/EditPlan';
 
 function App() {
     // set the user by calling getUser function
     const [user, setUser] = useState(getUser());
-
+    const [plans, setPlans] = useState([]);
+     
+    useEffect(function() {
+        async function getAllPlans() {
+        const plans = await practicePlanAPI.showPlans();
+        setPlans(plans);
+        }
+        getAllPlans();
+    }, [])
 
     return (
         < main className="App">
@@ -22,11 +31,11 @@ function App() {
 
                     <NavBar user={user} setUser={setUser}/>
                     <Routes>
-                        <Route path="/plans/new" element={<NewPlanPage/>}/>
-                        <Route path="/plans" element={<PlanViews user={user}/>}/>
+                        <Route path="/new" element={<NewPlanPage/>}/>
+                        <Route path="/" element={<PlanViews user={user}/>}/>
 
-                        <Route path="/plans/details/:id" element={<PlanDetailPage/>}/>
-                        {/* <Route path="/plans/edit/:id" element={<EditPlan/>}/> */}
+                        <Route path="/details/:id" element={<PlanDetailPage plans={plans} setPlans={setPlans}/>}/>
+                        <Route path="/edit/:id" element={<EditPlan plans={plans} setPlans={setPlans}/>}/>
                     </Routes>
                 </>
                 :
