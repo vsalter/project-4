@@ -20,7 +20,8 @@ async function create(req, res) {
 }
 
 async function show(req, res) {
-    const getPlans = await Plan.find({});
+    const user = req.user._id;
+    const getPlans = await Plan.find({ user });
     res.json(getPlans);
 }
 

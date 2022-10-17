@@ -43,7 +43,7 @@ export default function PlanViews({user}) {
 
     return (
         <>
-        {plans.map((p, idx) => 
+        { plans.map((p, idx) => 
         <div>
             <p>{p.name} | {p.date} | {p.startTime} | <Link to={`details/${p._id}`}><button onClick={() => getAPlan(p._id)}>details </button></Link> | <button onClick={()=>handleDelete(p._id)}>x</button></p> 
             {/* | Complete:<input type="checkbox" onChange={(e) => handleChange(e, p._id, p.complete)}
