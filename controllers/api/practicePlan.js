@@ -35,7 +35,7 @@ async function getPlan(req, res) {
 }
 
 async function editPlan(req, res) {
-    const plan = await Plan.findByIdAndUpdate({_id: req.params.id}, req.body, {new:true});
+    const plan = await Plan.findByIdAndUpdate({_id: req.params.id}, req.body);
     res.json(plan);
 }
 

@@ -25,6 +25,7 @@ export default function NewPlanPage({newPlan}) {
       const practicePlan = await planAPI.newPlan(plan);
       setPlan(practicePlan);
       alert('success');
+      window.location.reload();
     } catch {
       setError('Unsuccessful')
     }

@@ -14,19 +14,19 @@ const practicePlanSchema = new Schema({
     startTime: {
         type: Date, 
         default: function(){
-            return new Date(new Date().setFullYear(new Date().getFullYear()+1))
+            return new Date(new Date().setFullYear(new Date().getFullYear()))
         }
     },
     endTime: {
         type: Date, 
         default: function(){
-            return new Date(new Date().setFullYear(new Date().getFullYear()+1))
+            return new Date(new Date())
         }
     },
-    complete: {
-        type: Boolean,
-        default: false,
-    },
+    // complete: {
+    //     type: Boolean,
+    //     default: false,
+    // },
     user: { 
         type: Schema.Types.ObjectId, 
         ref: 'User', 
