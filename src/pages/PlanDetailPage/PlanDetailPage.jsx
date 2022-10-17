@@ -17,7 +17,6 @@ export default function PlanDetailPage({plans}) {
     
         return (
           <div>
-            <h1>{plan[0]._id}</h1>
             <h1>{plan[0].name}</h1>
             <h1>{plan[0].date}</h1>
             <h1>{plan[0].startTime}</h1>
