@@ -59,6 +59,7 @@ Coaches Corner is an app for coaches to create practice plans for their respecti
  - The other hurdle I faced was getting my details page to show. 
  
 ## Future Features
+ - Improved CSS
  - The ability to add drills on the practice plan detail page
    ![Screen Shot 2022-10-17 at 3 49 28 PM](https://user-images.githubusercontent.com/59453943/196269612-e79d8030-9fdb-4f15-93bd-aa5602119bef.png)
    
