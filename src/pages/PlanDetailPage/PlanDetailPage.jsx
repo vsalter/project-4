@@ -21,7 +21,7 @@ export default function PlanDetailPage({plans}) {
             <h1>{plan[0].date}</h1>
             <h1>{plan[0].startTime}</h1>
             <h1>{plan[0].endTime}</h1>
-            <Link to={`/edit/${plan[0]._id}`}><button onClick={() => getAPlan(plan[0]._id)}>edit </button></Link>
+            <Link to={`/edit/${plan[0]._id}`}><button className="button" onClick={() => getAPlan(plan[0]._id)}>edit </button></Link>
           </div>
         )
 }
