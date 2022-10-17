@@ -32,10 +32,10 @@ function App() {
                     <NavBar user={user} setUser={setUser}/>
                     <Routes>
                         <Route path="/new" element={<NewPlanPage/>}/>
-                        <Route path="/" element={<PlanViews user={user}/>}/>
+                        <Route path="/" element={<PlanViews user={user} plans={plans}/>}/>
 
-                        <Route path="/details/:id" element={<PlanDetailPage plans={plans} setPlans={setPlans}/>}/>
-                        <Route path="/edit/:id" element={<EditPlan plans={plans} setPlans={setPlans}/>}/>
+                        <Route path="/details/:id" element={<PlanDetailPage plans={plans}/>}/>
+                        <Route path="/edit/:id" element={<EditPlan plans={plans}/>}/>
                     </Routes>
                 </>
                 :
