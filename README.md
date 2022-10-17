@@ -53,7 +53,7 @@ Coaches Corner is an app for coaches to create practice plans for their respecti
 - **Trello:** Link to pseudocode is [here](https://trello.com/invite/b/DngNlN1U/65244faea4d2d186812bf818b367225c/coachescorner)
 
 ## Hurdles
- - The first hurdle I faced was just understand the flow within React. 
+ - The first hurdle I faced was just understanding the flow within React. 
  
  
  - The other hurdle I faced was getting my details page to show. 
